@@ -5,7 +5,7 @@
 
 using namespace std;
 
-//AUFGABE 1A
+//AUFGABE 1A && 1B
 double func(double x) {
     return x*x - 2;
 }
@@ -41,32 +41,31 @@ double wurzel_vorlesung_analog(double base) {
     return result;
 }
 
-int fib_iterative_while(int n) {
-    int a = 0;
-    int b = 1;
-    int i = 0;
-    while(i<n) {
-        int t = a+b; a = b; b = t;
-        i++;
-    }
-    return a;
-}
+// int fib_iterative_while(int n) {
+//     int a = 0;
+//     int b = 1;
+//     int i = 0;
+//     while(i<n) {
+//         int t = a+b; a = b; b = t;
+//         i++;
+//     }
+//     return a;
+// }
 
-int INV_fib_iterative_while(int n) {
-    int a = 0;
-    int b = 1;
-    int i = n - 1;
-    while(i > 0) {
-        int t = a + b; a = b; b = t;
-        i--;
-    }
-    return a;
-}
+// int INV_fib_iterative_while(int n) {
+//     int a = 0;
+//     int b = 1;
+//     int i = n - 1;
+//     while(i > 0) {
+//         int t = a + b; a = b; b = t;
+//         i--;
+//     }
+//     return a;
+// }
 
 //AUFGABE 3
-
 int *fill_array() {
-    cout << "Please insert a number to push into the array" << endl;
+    cout << "\nPlease insert a number to push into the array" << endl;
     static int accumulator[10];
     int a;
     int i = 0;
@@ -90,24 +89,6 @@ int *fill_array() {
     }
 }
 
-/*
-    konstruktoren
-    sind methoden, haben keine ruckgabewert
-    ~destruktoren
-
-    Pointer(const Pointer& other)
-        : _x(other._x)
-        , _y(other._y)
-    {}
-
-    copy assignment Operator
-    Pointer& operator=(const Pointer& other) {
-        _x = other._x;
-        _y = other._y;
-        return *this;
-    }
-*/
-
 //aufgabe 4
 
 bool deck_check(int deck[], int n) {
@@ -117,109 +98,116 @@ bool deck_check(int deck[], int n) {
     return true;
 }
 
-void perfect_out_shuffle(int deck1[],int deck2[], size_t length) {
-    int shuffledArray[52];
-    for(unsigned int i = 0; i < length - 1; i++) {
-        if(i % 2 == 0 || i == 0) {
-            shuffledArray[i] = deck1[i];
-        } else {
-            shuffledArray[i] = deck2[i];
-        }
-        cout << shuffledArray[i] << endl;
+void build_deck(int *deck, size_t length) {
+    for(unsigned int i = 0; i <= length - 1; i++) {
+        deck[i] = i;
     }
 }
-int create_copies(int deck[], size_t length) {
-    array<int,26> left_side_array, right_side_array;
 
-    printf("Loop starts here\n");
-    for(unsigned int i = 0; i <= (length/2)-1; ++i) {
-        // if(i <= (length/2) -1) {
-            left_side_array[i] = i;
-        // }
-        //  else {
-        //     right_side_array[i] = i;
-        // }
+void print_array_to_console(int array[], size_t length) {
+    printf("\nArray(");
+    for(unsigned int i = 0; i <= length - 1; i++) {
+            printf("%i, ", array[i]);
     }
+    printf(")");
+}
 
-    for(unsigned int i = 0; i <= length - 1; ++i) {
-        if(i >= (length/2)) {
-            right_side_array[i - (length/2)] = i;
+int *perfect_out_shuffle(int deck[], size_t length) {
+    int newArray[52];
+    unsigned int counter = 1;
+    unsigned int middle = (length/2) - 1;
+    for(unsigned int i = 0; i <= length - 1; i++) {
+        if(i == 0 || i == length - 1) {
+            newArray[i] = deck[i];
         } 
+        else if(i % 2 == 0) {
+            newArray[i] = deck[i/2];
+        } else  if ( i % 2 == 1) {
+            newArray[i] = deck[middle + counter];
+            counter++;
+        }
     }
-
-    for(auto x : left_side_array) {
-        cout << x << " ";
-    }
-    printf("\n");
-    for(auto x : right_side_array) {
-        cout << x << " ";
-    }
-
-
-    // int another_size = sizeof(deck[0]);
-    // cout << size << " " << another_size << endl;
-    // printf("Loop starts here");
-    // for(const int &number : deck) {
-    //     cout << number << endl;
-    // }
-    return 0;
-
-    perfect_out_shuffle(left_side_array, right_side_array, length);
+    return newArray;
 }
 
+int *perfect_in_shuffle(int deck[], size_t length) {
+    int newArray[52];
+    unsigned int even_counter = 0;
+    unsigned int odd_counter = 0;
+    unsigned int middle = (length/2) - 1;
+    for(unsigned int i = 0; i <= length -1; i++) {
+        if(i == 0) {
+            newArray[i] = deck[middle + 1];
+        } else if (i % 2 == 0) {
+            newArray[i] = deck[i + (middle - even_counter)];
+            even_counter++;
+        } else if (i % 2 == 1) {
+            newArray[i] = deck[odd_counter];
+            odd_counter++;
+        }
+    }
+    return newArray;
+}
 
+int solve_shuffle(int deck[], size_t length) {
+    int iteration_count = 0;
+    while(!deck_check(deck, length)) {
+        iteration_count++;
+        int *perfectly_out_shuffled_array = perfect_out_shuffle(deck, length);
+        print_array_to_console(perfectly_out_shuffled_array, length);
+        if(!deck_check(perfectly_out_shuffled_array, length)) {
+            break;
+        }
 
+        iteration_count++;
+        int *perfectly_in_shuffled_array = perfect_in_shuffle(deck,length);
+        print_array_to_console(perfectly_in_shuffled_array, length);
+        if(!deck_check(perfectly_in_shuffled_array, length)) {
+            break;
+        }
+    }
+    print("\nThe amount of iterations needed were: ", iteration_count, "\n", 0);
+    return iteration_count;
+}
 
 
 int main() {
-    //AUFGABE 1A
-    // printf("please enter b and a (in that order) \n");
-    // cout << wurzel_iterative(enter_int(), enter_int());
+    // AUFGABE 1A
+    printf("please enter b and a (in that order) Ex: 1 and 2 \n");
+    cout << wurzel_iterative(enter_int(), enter_int());
 
-    // printf("\nplease enter a base \n");
-    // cout << wurzel_vorlesung_analog(enter_int());
-    // return 0;
+    printf("\nplease enter a base \n");
+    cout << wurzel_vorlesung_analog(enter_int());
 
-    //AUFGABE 1B
-    //Die Funktion wurzel_iterative() braucht 52 iterationen um auf das Ergebnis 1.41421 zu kommen. Die Funktion wurzel_vorlesung_analog (mit dem newton Verfahren implementiert) braucht nur 6 Iterationen um auf der selbe Ergebnis zu kommen.
+    // AUFGABE 1B
+    Die Funktion wurzel_iterative() braucht 52 iterationen um auf das Ergebnis 1.41421 zu kommen. Die Funktion wurzel_vorlesung_analog (mit dem newton Verfahren implementiert) braucht nur 6 Iterationen um auf der selbe Ergebnis zu kommen.
 
-    //AUFGABE 2A
-    // cout << fib_iterative_while(5) << endl;
+    AUFGABE 2A
+    cout << fib_iterative_while(5) << endl;
 
-    //AUFGABE 2B
-    // cout << INV_fib_iterative_while(5) << endl;
-    // //P(N): n > 0, i = n - 1;
-    // //Q(N): i-- nach jeder iteration
+    // AUFGABE 2B
+    cout << INV_fib_iterative_while(5) << endl;
+    //P(N): n > 0, i = n - 1;
+    //Q(N): i-- nach jeder iteration
 
-    // //AUFGABE 3
-    // int *number = fill_array();
-    // printf("Array(");
-    // size_t length = 10;
-    // for(size_t i = 0; i < length; i++) {
-    //     if(number[i] != 0) {
-    //         printf("%i, ", number[i]);
-    //     }
-    // }
-    // printf(")");
+    // AUFGABE 3
+    int *number = fill_array();
+    printf("Array(");
+    size_t length = 10;
+    for(size_t i = 0; i < length; i++) {
+        if(number[i] != 0) {
+            printf("%i, ", number[i]);
+        }
+    }
+    printf(")");
 
     //AUFGABE 4
-    int testArray[52];
-    for(unsigned int i = 0; i <= (sizeof(testArray)/sizeof(testArray[0])) - 1; i++) {
-        testArray[i] = i;
-        // cout << testArray[i] << endl;
-    }
-    cout << deck_check(testArray, (sizeof(testArray)/sizeof(testArray[0])));
-    create_copies(testArray, (sizeof(testArray)/sizeof(testArray[0])));
-
-
-
-    // switch(s[i]) {
-    //     case ' ': 
-    //     if(in_number)
-    //         done = true;
-    //         break;
-    //     case '+':
-    //     case '-':
-    //     negative=true;
-    // }
+    int deck[52] = {};
+    size_t length = sizeof(deck)/sizeof(deck[0]);
+    build_deck(deck, length );
+    print("\n The builded deck looks like this: \n");
+    print_array_to_console(deck,length );
+    // int *perfectly_out_shuffled_array = perfect_out_shuffle(deck, length);
+    solve_shuffle(deck, length);
+    return 0;
 }

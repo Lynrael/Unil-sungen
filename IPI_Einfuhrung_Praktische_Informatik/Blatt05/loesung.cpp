@@ -84,3 +84,21 @@ int main() {
 
     return 0;
 }
+
+/*
+    int test(int x, int y, int n) {
+        return cond(x*x+y*y <= n*n, 1, 0);
+    }
+
+    int laufex(int x, int y, int n) {
+        return cond(x <= n, test(x,y,n) + laufex(x+1, y, n), 0);
+    }
+
+    int block(int y, int n) {
+        return cond( y <= n, test(-n, y, n) + laufex(-n+1, y, n) + block(y+1, n)),0);
+    }
+
+    int imkreis(int n) {
+        return block(-n, n);
+    }
+*/
