@@ -6,10 +6,13 @@
 using namespace std;
 
 //AUFGABE 1A && 1B
-double func(double x) {
-    return x*x - 2;
+
+//function to find roots of, feel free to change the argument b, as default
+double func(double x, double b = 2) {
+    return x*x - b;
 }
 
+//Intervallhalbierung function of Aufgabe 1A with iterator counter included
 double wurzel_iterative(double a, double b) {
     double error_margin = 1e-15, middle_value = (a+b)/2 + 0.0;
     int iteration_count = 0;
@@ -28,6 +31,7 @@ double wurzel_iterative(double a, double b) {
     return middle_value;
 }
 
+//function analog to the function wurzel(double a) seen in the VL, implemented with Intervallhalbierung in a more efficient way.
 double wurzel_vorlesung_analog(double base) {
     double result, accumulator = 1.0;
     int iteration_count = 0;
@@ -41,29 +45,9 @@ double wurzel_vorlesung_analog(double base) {
     return result;
 }
 
-// int fib_iterative_while(int n) {
-//     int a = 0;
-//     int b = 1;
-//     int i = 0;
-//     while(i<n) {
-//         int t = a+b; a = b; b = t;
-//         i++;
-//     }
-//     return a;
-// }
-
-// int INV_fib_iterative_while(int n) {
-//     int a = 0;
-//     int b = 1;
-//     int i = n - 1;
-//     while(i > 0) {
-//         int t = a + b; a = b; b = t;
-//         i--;
-//     }
-//     return a;
-// }
-
 //AUFGABE 3
+
+//fill_array asks the user for numerical inputs and fills an array with them according to the functionality asked by Aufgabe 3
 int *fill_array() {
     cout << "\nPlease insert a number to push into the array" << endl;
     static int accumulator[10];
@@ -90,7 +74,7 @@ int *fill_array() {
 }
 
 //aufgabe 4
-
+//function to check if the deck is in order.
 bool deck_check(int deck[], int n) {
     for(int i = 0; i < n; i++) {
         if(deck[i] != i) return false; 
@@ -98,12 +82,14 @@ bool deck_check(int deck[], int n) {
     return true;
 }
 
+//function that fills a deck with cards coded from 0 to 51 as the card values. Length 52 defined in main()
 void build_deck(int *deck, size_t length) {
     for(unsigned int i = 0; i <= length - 1; i++) {
         deck[i] = i;
     }
 }
 
+// function to print the array contents to the console
 void print_array_to_console(int array[], size_t length) {
     printf("\nArray(");
     for(unsigned int i = 0; i <= length - 1; i++) {
@@ -112,6 +98,7 @@ void print_array_to_console(int array[], size_t length) {
     printf(")");
 }
 
+//simulates the perfect out shuffle and returns a new array with the desired values
 int *perfect_out_shuffle(int deck[], size_t length) {
     int newArray[52];
     unsigned int counter = 1;
@@ -130,6 +117,7 @@ int *perfect_out_shuffle(int deck[], size_t length) {
     return newArray;
 }
 
+//simulates the perfect in shuffle and returns a new array with the desired values
 int *perfect_in_shuffle(int deck[], size_t length) {
     int newArray[52];
     unsigned int even_counter = 0;
@@ -149,6 +137,7 @@ int *perfect_in_shuffle(int deck[], size_t length) {
     return newArray;
 }
 
+// implements the last two declared functions into a while loop and checks whether they look like the first deck created. Returns the number of iterations 
 int solve_shuffle(int deck[], size_t length) {
     int iteration_count = 0;
     while(!deck_check(deck, length)) {
@@ -180,21 +169,15 @@ int main() {
     cout << wurzel_vorlesung_analog(enter_int());
 
     // AUFGABE 1B
-    Die Funktion wurzel_iterative() braucht 52 iterationen um auf das Ergebnis 1.41421 zu kommen. Die Funktion wurzel_vorlesung_analog (mit dem newton Verfahren implementiert) braucht nur 6 Iterationen um auf der selbe Ergebnis zu kommen.
-
-    AUFGABE 2A
-    cout << fib_iterative_while(5) << endl;
-
-    // AUFGABE 2B
-    cout << INV_fib_iterative_while(5) << endl;
-    //P(N): n > 0, i = n - 1;
-    //Q(N): i-- nach jeder iteration
+    // Die Funktion wurzel_iterative() braucht 52 iterationen um auf das Ergebnis 1.41421 zu kommen. Die Funktion wurzel_vorlesung_analog (mit dem newton Verfahren implementiert) braucht nur 6 Iterationen um auf der selbe Ergebnis zu kommen.
 
     // AUFGABE 3
+    //getting the array with the corresponding functionality
     int *number = fill_array();
     printf("Array(");
-    size_t length = 10;
-    for(size_t i = 0; i < length; i++) {
+    size_t theArraylength = 10;
+        // printing array to the console
+    for(size_t i = 0; i < theArraylength; i++) {
         if(number[i] != 0) {
             printf("%i, ", number[i]);
         }
@@ -202,12 +185,18 @@ int main() {
     printf(")");
 
     //AUFGABE 4
-    int deck[52] = {};
+
+    //insert numbers here to test the shuffle array function
+    int deck[52] = {/*insert numbers 0-51 here to test*/};
     size_t length = sizeof(deck)/sizeof(deck[0]);
-    build_deck(deck, length );
-    print("\n The builded deck looks like this: \n");
+
+    //this function creates an array length 52 with every index corresponding with one card coded as a number in descending order
+
+    //to test the solve_shuffle function, comment both of these functions out and write the test values in the {} of the deck[52] array.
+    build_deck(deck, length);
     print_array_to_console(deck,length );
-    // int *perfectly_out_shuffled_array = perfect_out_shuffle(deck, length);
+    
+    //Here is the while loop for this exercise.
     solve_shuffle(deck, length);
     return 0;
 }

@@ -23,4 +23,4 @@ std::vector<double> normal_distribution(int seed, int N, double avg, double std_
 // returns a random seed (different on each call)
 int random_seed();
 
-#endif // IO_HH
+#endif  
