@@ -1,5 +1,5 @@
-#ifndef STATISTICS.HH
-#define STATISTICS.HH
+#ifndef STATISTICS_HH
+#define STATISTICS_HH
 
 #include "io.cc"
 #include <algorithm>

@@ -1,3 +1,0 @@
-C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt06/Aufgabe2/CMakeFiles/zweite-aufgabe.dir
-C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt06/Aufgabe2/CMakeFiles/edit_cache.dir
-C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt06/Aufgabe2/CMakeFiles/rebuild_cache.dir

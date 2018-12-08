@@ -317,6 +317,8 @@ int main() {
     //Aufgabe 2d
     test_parse_int_as_pair(testVectorStrings);
 
+    char c = 49;
+    cout << c << endl;
     return 0;
 }
 
