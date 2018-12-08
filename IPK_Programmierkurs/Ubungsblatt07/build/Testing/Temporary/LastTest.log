@@ -1,0 +1,18 @@
+Start testing: Dec 08 10:49 W. Europe Standard Time
+----------------------------------------------------------
+1/1 Testing: shapestest
+1/1 Test: shapestest
+Command: "C:/Program Files/Git/usr/bin/test.exe"
+Directory: C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/build
+"shapestest" start time: Dec 08 10:49 W. Europe Standard Time
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Failed.
+"shapestest" end time: Dec 08 10:49 W. Europe Standard Time
+"shapestest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 08 10:49 W. Europe Standard Time

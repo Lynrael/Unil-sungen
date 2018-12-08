@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/point.hh
+iostream
+-
+algorithm
+-
+
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/polygon.cc
+polygon.hh
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/polygon.hh
+
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/polygon.hh
+vector
+-
+iterator
+-
+cmath
+-
+point.hh
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/point.hh
+
