@@ -2,7 +2,11 @@
 #define CANVAS_HH
 
 #include <vector>
+#include <cmath>
+#include <algorithm>
+
 #include "point.hh"
+#include "pgm.hh"
 
 class Canvas {
     const double _height, _width;
@@ -14,6 +18,7 @@ class Canvas {
         int brightness(int i, int j) const;
         void setBrightness(int i, int j, int brightness);
         Point coord(int i, int j) const;
+        void write(const std::string& filename) const;
 };
 
 #endif
