@@ -1,0 +1,3 @@
+canvastest 0 0
+---
+canvastest

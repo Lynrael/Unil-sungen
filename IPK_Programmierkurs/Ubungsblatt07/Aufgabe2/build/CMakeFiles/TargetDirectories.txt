@@ -1,0 +1,6 @@
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/Aufgabe2/build/CMakeFiles/edit_cache.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/Aufgabe2/build/CMakeFiles/main.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/Aufgabe2/build/CMakeFiles/canvaslib.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/Aufgabe2/build/CMakeFiles/canvastest.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/Aufgabe2/build/CMakeFiles/rebuild_cache.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/Aufgabe2/build/CMakeFiles/test.dir

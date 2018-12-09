@@ -1,0 +1,2 @@
+C:/MinGW/bin/ar.exe qc libcanvaslib.a  CMakeFiles/canvaslib.dir/point.cc.obj CMakeFiles/canvaslib.dir/canvas.cc.obj CMakeFiles/canvaslib.dir/pgm.cc.obj
+C:/MinGW/bin/ranlib.exe libcanvaslib.a

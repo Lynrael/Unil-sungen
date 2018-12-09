@@ -1,0 +1,18 @@
+Start testing: Dec 09 07:37 W. Europe Standard Time
+----------------------------------------------------------
+1/1 Testing: canvastest
+1/1 Test: canvastest
+Command: "C:/Program Files/Git/usr/bin/test.exe"
+Directory: C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt07/Aufgabe2/build
+"canvastest" start time: Dec 09 07:37 W. Europe Standard Time
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Failed.
+"canvastest" end time: Dec 09 07:37 W. Europe Standard Time
+"canvastest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 09 07:37 W. Europe Standard Time
