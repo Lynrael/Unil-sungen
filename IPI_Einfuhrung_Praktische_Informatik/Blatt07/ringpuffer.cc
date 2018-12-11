@@ -1,123 +1,57 @@
-#include <iostream> 
+#include <iostream>
 #include <array>
 
-#include <iostream>
-#define QUEUE_LENGTH 10   /* QUEUE_LENGTH of Circular Queue */
-
-using namespace std;
-
-class Queue {
-private:
-    int items[QUEUE_LENGTH], front, rear;
-    
-public:
-    Queue(){
-        front = -1;
-        rear = -1;
-    }
-    
-    bool isFull(){
-        if(front == 0 && rear == QUEUE_LENGTH - 1){
-            return true;
-        }
-        if(front == rear + 1) {
-            return true;
-        }
-        return false;
-    }
-    
-    bool isEmpty(){
-        if(front == -1) return true;
-        else return false;
-    }
-    
-    void enQueue(int element){
-        if(isFull()){
-            cout << "Queue is full";
-        } else {
-            if(front == -1) front = 0;
-            rear = (rear + 1) % QUEUE_LENGTH;
-            items[rear] = element;
-            cout << endl << "Inserted " << element << endl;
-        }
-    }
-    
-    int deQueue(){
-        int element;
-        if(isEmpty()){
-            cout << "Queue is empty" << endl;
-            return(-1);
-        } else {
-            element = items[front];
-            if(front == rear){
-                front = -1;
-                rear = -1;
-            } /* Q has only one element, so we reset the queue after deleting it. */
-            else {
-                front=(front+1) % QUEUE_LENGTH;
-            }
-            return(element);
-        }
-    }
-    
-    void display()
-    {
-        /* Function to display status of Circular Queue */
-        int i;
-        if(isEmpty()) {
-            cout << endl << "Empty Queue" << endl;
-        }
-        else
-        {
-            cout << "Front -> " << front;
-            cout << endl << "Items -> ";
-            for(i=front; i!=rear;i=(i+1)%QUEUE_LENGTH)
-                cout << items[i];
-            cout << items[i];
-            cout << endl << "Rear -> " << rear;
-        }
-    }
-    
-};
-
-
-int main()
+int circular_puffer()
 {
-    Queue q;
-    
-    // Fails because front = -1
-    q.deQueue();
-    
-    q.enQueue(1);
-    q.enQueue(2);
-    q.enQueue(3);
-    q.enQueue(4);
-    q.enQueue(5);
-    q.enQueue(6);
-    q.enQueue(7);
-    q.enQueue(8);
-    q.enQueue(9);
-    q.enQueue(10);
-    
-    // Fails to enqueue because front == 0 && rear == QUEUE_LENGTH - 1
-    q.enQueue(11);
-    
-    
-    q.display();
-    
-    int elem = q.deQueue();
-    
-    if( elem != -1)
-       cout << endl << "Deleted Element is " << elem;
-    
-    q.display();
-    
-    q.enQueue(12);
-    
-    q.display();
-    
-    // Fails to enqueue because front == rear + 1
-    q.enQueue(13);
-    
-    return 0;
+    int array[10];
+    size_t length = sizeof(array) / sizeof(array[0]);
+    int in = 0, out = 0, iteration_counter = 0;
+    for (unsigned int i = 0; true; i++)
+    {
+        if (i == length)
+        {
+            i = 0;
+            iteration_counter++;
+        }
+
+        int input;
+        if (iteration_counter > 0)
+        {
+            std::cout << "Warning, now you are going to erase numbers out of the circular puffer! \n"
+                      << std::endl;
+        }
+        std::cin >> input;
+        if (input == 0)
+        {
+            if (iteration_counter == 0)
+            {
+                out = 0;
+            }
+            else
+            {
+                out = i;
+            }
+            std::cout << "Out = " << array[out] << std::endl;
+            return out;
+        }
+
+        if (input < 0)
+            break;
+
+        if (iteration_counter > 0)
+        {
+            out = i;
+            std::cout << "Out = " << array[out] << std::endl;
+        }
+
+        in = i;
+        array[i] = input;
+        std::cout << "In = " << array[in] << std::endl;
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    std::cout << "Please insert numbers into the array :)" << std::endl;
+    circular_puffer();
 }
