@@ -1,0 +1,18 @@
+Start testing: Dec 13 19:54 W. Europe Standard Time
+----------------------------------------------------------
+1/1 Testing: test_this_points
+1/1 Test: test_this_points
+Command: "C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt08/Aufgabe3/build/pointstest.exe"
+Directory: C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt08/Aufgabe3/build
+"test_this_points" start time: Dec 13 19:54 W. Europe Standard Time
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_this_points" end time: Dec 13 19:54 W. Europe Standard Time
+"test_this_points" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 13 19:54 W. Europe Standard Time
