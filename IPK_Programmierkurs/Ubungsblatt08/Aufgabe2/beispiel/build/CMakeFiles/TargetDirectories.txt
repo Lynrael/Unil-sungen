@@ -1,0 +1,6 @@
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt08/Aufgabe2/build/CMakeFiles/uniform.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt08/Aufgabe2/build/CMakeFiles/vectors.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt08/Aufgabe2/build/CMakeFiles/normal.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt08/Aufgabe2/build/CMakeFiles/readvector.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt08/Aufgabe2/build/CMakeFiles/edit_cache.dir
+C:/Users/markc/OneDrive/Aufgaben_uni/programmier_aufgaben_repo/IPK_Programmierkurs/Ubungsblatt08/Aufgabe2/build/CMakeFiles/rebuild_cache.dir

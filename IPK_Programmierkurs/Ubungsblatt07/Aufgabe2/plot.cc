@@ -10,7 +10,6 @@ int main(int argc, char *argv[]) {
             canvas.setBrightness(i,j, brightness);
         }
     }
-    printf("Marcos es marico");
-    canvas.show_pixels();
+    canvas.write("first_image.pgm");
     return 0;
 }

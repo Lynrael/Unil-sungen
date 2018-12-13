@@ -27,15 +27,3 @@ void Canvas::write(const std::string &filename) const
     write_pgm(_pixels, filename);
     read_pgm(filename);
 }
-
-void Canvas::show_pixels() const
-{
-    for(unsigned int j = 0; j < _pixels[0].size(); j++)
-    {
-        for (unsigned int i = 0; i < _pixels.size(); i++)
-        {
-                std::cout << "(" << i << "," << j << "," << _pixels[i][j] << ") " << std::endl;
-        }
-    }
-    return;
-}

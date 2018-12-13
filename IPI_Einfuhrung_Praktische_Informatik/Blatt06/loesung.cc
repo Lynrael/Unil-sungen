@@ -162,27 +162,27 @@ int solve_shuffle(int deck[], size_t length) {
 
 int main() {
     // AUFGABE 1A
-    printf("please enter b and a (in that order) Ex: 1 and 2 \n");
-    cout << wurzel_iterative(enter_int(), enter_int());
+    // printf("please enter b and a (in that order) Ex: 1 and 2 \n");
+    // cout << wurzel_iterative(enter_int(), enter_int());
 
-    printf("\nplease enter a base \n");
-    cout << wurzel_vorlesung_analog(enter_int());
+    // printf("\nplease enter a base \n");
+    // cout << wurzel_vorlesung_analog(enter_int());
 
-    // AUFGABE 1B
-    // Die Funktion wurzel_iterative() braucht 52 iterationen um auf das Ergebnis 1.41421 zu kommen. Die Funktion wurzel_vorlesung_analog (mit dem newton Verfahren implementiert) braucht nur 6 Iterationen um auf der selbe Ergebnis zu kommen.
+    // // AUFGABE 1B
+    // // Die Funktion wurzel_iterative() braucht 52 iterationen um auf das Ergebnis 1.41421 zu kommen. Die Funktion wurzel_vorlesung_analog (mit dem newton Verfahren implementiert) braucht nur 6 Iterationen um auf der selbe Ergebnis zu kommen.
 
-    // AUFGABE 3
-    //getting the array with the corresponding functionality
-    int *number = fill_array();
-    printf("Array(");
-    size_t theArraylength = 10;
-        // printing array to the console
-    for(size_t i = 0; i < theArraylength; i++) {
-        if(number[i] != 0) {
-            printf("%i, ", number[i]);
-        }
-    }
-    printf(")");
+    // // AUFGABE 3
+    // //getting the array with the corresponding functionality
+    // int *number = fill_array();
+    // printf("Array(");
+    // size_t theArraylength = 10; 
+    //     // printing array to the console
+    // for(size_t i = 0; i < theArraylength; i++) {
+    //     if(number[i] != 0) {
+    //         printf("%i, ", number[i]);
+    //     }
+    // }
+    // printf(")");
 
     //AUFGABE 4
 
@@ -200,3 +200,43 @@ int main() {
     solve_shuffle(deck, length);
     return 0;
 }
+
+/*
+   int wcount;
+   int icount;
+   const double genau = 1.0e-12;
+
+   double abs(double x) {
+       if(x>0) return -x;
+   }
+
+   bool gut_genug(double xn, double a) {
+
+   }
+*/
+
+/*
+    schleife for variante
+
+    v = (a,b,i)
+    b(v)= b(a,b,i) = i < n;
+    h(v) = h(a,b,i) = (b, a+b, i+1);
+    while(b(v)) {v = h(v)}
+
+    schleife invariante
+    p(n) = (n >= && a = 0 && b = 1 && i = 0)
+    q(a,b,i) = b = fib(n)
+    inv(a,b,i) = a = fib(i) && b = fib(i + 1)
+
+    1. v0 = (0,1,0)
+    inv(0,1,0) = fib(0) = 0 && fib(1) = 1
+    2. vj = (aj, bj, ij)
+    inv(aj,bj,i,j) = fib(j) = a && fib(j + 1) = b
+    H(aj, bi, ij) = (bj,aj + bj, Ij+1)
+    Vj+1(bj, aj + bj, Ij+1)
+    INVj+1(bj, aj + bj, Ij+1) = fib(ij+1) = bj && fib(ij+2) = aj + bj = fib(j) + fib(Bj+1) 
+
+    INVn(a,b,c) && !B(n)
+    fib(i) = a && fib(i + 1) = b && (0 <= i <= n) && !b(n)
+    => i = n && fib(n) = a && fib(n+1) = b
+*/

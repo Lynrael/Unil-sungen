@@ -19,7 +19,6 @@ class Canvas {
         void setBrightness(int i, int j, int brightness);
         Point coord(int i, int j) const;
         void write(const std::string& filename) const;
-        void show_pixels() const;
 };
 
 #endif

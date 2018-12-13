@@ -17,22 +17,22 @@ int circular_puffer()
         int input;
         if (iteration_counter > 0)
         {
-            std::cout << "Warning, now you are going to erase numbers out of the circular puffer! \n"
-                      << std::endl;
+            std::cout << "Warning, now you are going to erase numbers out of the circular puffer! \n"<< std::endl;
         }
         std::cin >> input;
         if (input == 0)
         {
             if (iteration_counter == 0)
             {
-                out = 0;
+                std::cout << "Out = " << 0 << std::endl;
+                return out;
             }
             else
             {
                 out = i;
+                std::cout << "Out = " << array[out] << std::endl;
+                return out;
             }
-            std::cout << "Out = " << array[out] << std::endl;
-            return out;
         }
 
         if (input < 0)
@@ -48,10 +48,12 @@ int circular_puffer()
         array[i] = input;
         std::cout << "In = " << array[in] << std::endl;
     }
+    return 0;
 }
 
 int main(int argc, char *argv[])
 {
     std::cout << "Please insert numbers into the array :)" << std::endl;
     circular_puffer();
+    return 0;
 }
